@@ -1,73 +1,101 @@
-# Welcome to your Lovable project
+# NewsBite - AI News Summarizer
 
-## Project info
+## About
 
-**URL**: https://lovable.dev/projects/49f673c9-786e-4d32-97fe-6be1e5d2116b
+NewsBite is an AI-powered news summarization tool that transforms long articles into quick, digestible summaries. Simply paste any article and get instant key points, sentiment analysis, and reading time estimates.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **AI-Powered Summarization**: Leverages Google Gemini AI for intelligent article summarization
+- **Sentiment Analysis**: Automatically detects article sentiment (positive, negative, neutral)
+- **Key Highlights**: Extracts 3-5 key points from any article
+- **Reading Time**: Calculates word count and estimated reading time
+- **Smart Keywords**: Identifies 5-7 relevant keywords from the content
+- **History Tracking**: Saves your last 5 summaries for easy access
+- **Sample Article**: Try it out with a pre-loaded sample article
 
-**Use Lovable**
+## Technologies
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/49f673c9-786e-4d32-97fe-6be1e5d2116b) and start prompting.
+This project is built with modern web technologies:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **React** - UI framework
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn-ui** - Beautiful UI components
+- **Supabase** - Backend and edge functions
+- **Google Gemini AI** - AI summarization engine
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (v18 or higher)
+- npm or yarn
 
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd newsbite
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Environment Variables
 
-**Use GitHub Codespaces**
+Create a `.env` file with the following variables:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+VITE_SUPABASE_URL=your_supabase_url
+VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_key
+VITE_SUPABASE_PROJECT_ID=your_project_id
+```
 
-## What technologies are used for this project?
+You'll also need to configure the `GEMINI_API_KEY` secret in your Supabase edge function environment.
 
-This project is built with:
+## Development
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Project Structure
 
-## How can I deploy this project?
+```
+newsbite/
+├── src/
+│   ├── components/       # React components
+│   ├── pages/           # Page components
+│   ├── utils/           # Utility functions
+│   └── integrations/    # API integrations
+├── supabase/
+│   └── functions/       # Edge functions
+└── public/              # Static assets
+```
 
-Simply open [Lovable](https://lovable.dev/projects/49f673c9-786e-4d32-97fe-6be1e5d2116b) and click on Share -> Publish.
+### Available Scripts
 
-## Can I connect a custom domain to my Lovable project?
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
 
-Yes, you can!
+## Deployment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+You can deploy this application to any static hosting service that supports React applications:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- Vercel
+- Netlify
+- GitHub Pages
+- Any cloud provider
+
+Make sure to configure your environment variables in your deployment platform.
+
+## License
+
+This project is open source and available under the MIT License.

@@ -6,6 +6,7 @@ import { SummaryHistory } from "@/components/SummaryHistory";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { SAMPLE_ARTICLE } from "@/utils/sampleArticle";
+import { Newspaper } from "lucide-react";
 
 interface SummaryData {
   title: string;
@@ -109,7 +110,10 @@ const Index = () => {
       {/* Header */}
       <header className="border-b border-border bg-card">
         <div className="container mx-auto px-4 py-6">
-          <h1 className="text-3xl font-bold text-primary">NewsBite</h1>
+          <h1 className="text-3xl font-bold text-primary flex items-center gap-2">
+            <Newspaper className="w-8 h-8" />
+            NewsBite
+          </h1>
           <p className="text-muted-foreground mt-1">
             Turn long news articles into quick, readable summaries
           </p>
